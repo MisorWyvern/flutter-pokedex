@@ -35,12 +35,12 @@ main() {
 
   test("Should return a failure if findAll fails", () async {
     when(_repository.findAll()).thenAnswer((_) async =>
-        Left(UseCaseException("UseCase Exception: mock exception")));
+        Left(UseCaseException("UseCaseException: mock exception")));
 
     var result = await _usecase.findall();
 
     expect(result, isA<Left>());
     expect(result.fold(id, id), isA<UseCaseException>());
-    expect(result.fold((l) => l.props[0], id), contains("UseCase Exception: "));
+    expect(result.fold((l) => l.props[0], id), contains("UseCaseException: "));
   });
 }

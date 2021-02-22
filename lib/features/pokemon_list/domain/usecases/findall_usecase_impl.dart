@@ -15,8 +15,7 @@ class FindAllUseCaseImpl implements FindAllUseCase {
     var result = await _repository.findAll();
 
     return result.fold(
-      (l) =>
-          Left(UseCaseException("UseCase Exception: error on find all call")),
+      (l) => Left(UseCaseException("UseCaseException: error on find all call")),
       (r) => Right(r),
     );
   }
