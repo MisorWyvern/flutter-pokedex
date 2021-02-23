@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:dio/dio.dart';
 import 'package:flutter_pokedex/features/pokemon_list/external/datasources/dio/pokemon_datasource_impl.dart';
 import 'package:flutter_pokedex/features/pokemon_list/infra/datasources/pokemon_datasource.dart';

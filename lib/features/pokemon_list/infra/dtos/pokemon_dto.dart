@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
-
 import 'package:flutter_pokedex/features/pokemon_list/infra/dtos/evolution_dto.dart';
 
 class PokemonDTO extends Equatable {
