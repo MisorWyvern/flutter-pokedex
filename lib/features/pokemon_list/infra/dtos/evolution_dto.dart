@@ -14,4 +14,20 @@ class EvolutionDTO extends Equatable {
 
   @override
   bool get stringify => true;
+
+  Map<String, dynamic> toMap() {
+    return {
+      'num': num ?? "",
+      'name': name ?? "",
+    };
+  }
+
+  factory EvolutionDTO.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
+    return EvolutionDTO(
+      num: map['num'] ?? "",
+      name: map['name'] ?? "",
+    );
+  }
 }
