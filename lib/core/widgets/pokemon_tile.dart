@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_pokedex/features/pokemon_list/infra/dtos/pokemon_dto.dart';
@@ -42,10 +43,11 @@ class PokemonTile extends StatelessWidget {
                     alignment: Alignment.bottomRight,
                     child: Container(
                       width: 100,
-                      child: Image.network(
-                        "https://www.serebii.net/pokemon/art/" + pokemon.num + ".png",
-                        fit: BoxFit.fitWidth,
-                      ),
+                      child: CachedNetworkImage(
+                        imageUrl: "https://www.serebii.net/pokemon/art/" + pokemon.num + ".png",
+                        progressIndicatorBuilder: (_,__,downloadProgress) => CircularProgressIndicator(value: downloadProgress.progress,),
+                        errorWidget: (_,__,___) => Icon(Icons.error),
+                      ), 
                     ),
                   ),
                   ListView.builder(

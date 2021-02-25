@@ -33,6 +33,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  cached_network_image: ^2.5.0
   equatable: ^1.2.6
   dartz: ^0.9.2
   dio: ^3.0.10
