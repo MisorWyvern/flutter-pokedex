@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_pokedex/core/widgets/dark_small_title.dart';
 import 'package:flutter_pokedex/core/widgets/light_secondary_title.dart';
 import 'package:flutter_pokedex/core/widgets/pokemon_tile.dart';
 import 'package:flutter_pokedex/features/pokemon_list/presenter/controllers/pokemon_list_controller.dart';
@@ -17,10 +18,10 @@ class _PokemonListPageState
       decoration: BoxDecoration(
         color: Theme.of(context).backgroundColor,
         image: DecorationImage(
-          image: AssetImage("assets/pokeball.png"),
-          alignment: Alignment(1, -1),
+          image: AssetImage("assets/pokeball10.png"),
+          alignment: Alignment(2.25, -1.25),
           fit: BoxFit.none,
-          scale: 3,
+          scale: 1,
         ),
       ),
       child: Padding(
@@ -46,7 +47,8 @@ class _PokemonListPageState
           body: SingleChildScrollView(
             child: Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
+              height:
+                  MediaQuery.of(context).size.height - kToolbarHeight - 8 * 5.0,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -59,8 +61,43 @@ class _PokemonListPageState
                     future: controller.updatePokemonList(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState != ConnectionState.done) {
-                        return Center(
-                          child: CircularProgressIndicator(),
+                        return Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              DarkSmallTitle(
+                                title: "Loading...",
+                                isTextAlignCenter: true,
+                              ),
+                              CircularProgressIndicator(),
+                            ],
+                          ),
+                        );
+                      }
+
+                      if (controller.pokemonList.length == 0) {
+                        return Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.mood_bad_outlined),
+                              DarkSmallTitle(
+                                title: "Something went wrong...",
+                                isTextAlignCenter: true,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 8.0),
+                                child: Text(
+                                  "Verify your connection and press \"Try again\" button...",
+                                ),
+                              ),
+                              RaisedButton(
+                                onPressed: controller.updatePokemonList,
+                                child: Text("Try again"),
+                              ),
+                            ],
+                          ),
                         );
                       }
 
@@ -71,10 +108,12 @@ class _PokemonListPageState
                               SliverGridDelegateWithMaxCrossAxisExtent(
                             mainAxisSpacing: 8,
                             crossAxisSpacing: 8,
-                            maxCrossAxisExtent: 320,
+                            maxCrossAxisExtent: 180,
                           ),
                           itemBuilder: (_, index) {
                             return PokemonTile(
+                              backgroundColor: controller.getColorByType(
+                                  controller.pokemonList[index].type[0]),
                               pokemon: controller.pokemonList[index],
                             );
                           },

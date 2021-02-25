@@ -22,10 +22,10 @@ class PokemonTile extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor,
           image: DecorationImage(
-            image: AssetImage("assets/pokeball.png"),
+            image: AssetImage("assets/pokeball20w.png"),
             alignment: Alignment(1.2, 1.2),
             fit: BoxFit.none,
-            scale: 8,
+            scale: 2.25,
           ),
         ),
         child: Column(
@@ -57,13 +57,15 @@ class PokemonTile extends StatelessWidget {
                       return Align(
                         alignment: Alignment.bottomLeft,
                         child: Chip(
+                            backgroundColor: backgroundColor.withOpacity(0.6),
                             label: Text(
-                          pokemon.type[i],
-                          style: TextStyle(
-                            color: Theme.of(context).textTheme.headline6.color,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )),
+                              pokemon.type[i],
+                              style: TextStyle(
+                                color:
+                                    Theme.of(context).textTheme.headline6.color,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )),
                       );
                     },
                   ),
