@@ -43,7 +43,7 @@ class PokemonTile extends StatelessWidget {
                     child: Container(
                       width: 100,
                       child: Image.network(
-                        pokemon.img,
+                        "https://www.serebii.net/pokemon/art/" + pokemon.num + ".png",
                         fit: BoxFit.fitWidth,
                       ),
                     ),
