@@ -18,7 +18,7 @@ class PokemonTile extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(16.0),
       child: Container(
-        height: 80,
+        height:132,
         padding: EdgeInsets.only(left: 16, top: 16),
         decoration: BoxDecoration(
           color: backgroundColor,
@@ -42,7 +42,7 @@ class PokemonTile extends StatelessWidget {
                   Align(
                     alignment: Alignment.bottomRight,
                     child: Container(
-                      width: 100,
+                      width: 88,
                       child: CachedNetworkImage(
                         imageUrl: "https://www.serebii.net/pokemon/art/" + pokemon.num + ".png",
                         progressIndicatorBuilder: (_,__,downloadProgress) => CircularProgressIndicator(value: downloadProgress.progress,),
@@ -63,6 +63,7 @@ class PokemonTile extends StatelessWidget {
                             label: Text(
                               pokemon.type[i],
                               style: TextStyle(
+                                fontSize: 12,
                                 color:
                                     Theme.of(context).textTheme.headline6.color,
                                 fontWeight: FontWeight.bold,

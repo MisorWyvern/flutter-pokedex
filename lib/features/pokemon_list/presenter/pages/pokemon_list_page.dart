@@ -4,6 +4,7 @@ import 'package:flutter_pokedex/core/widgets/dark_small_title.dart';
 import 'package:flutter_pokedex/core/widgets/light_secondary_title.dart';
 import 'package:flutter_pokedex/core/widgets/pokemon_tile.dart';
 import 'package:flutter_pokedex/features/pokemon_list/presenter/controllers/pokemon_list_controller.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class PokemonListPage extends StatefulWidget {
   @override
@@ -102,14 +103,10 @@ class _PokemonListPageState
                       }
 
                       return Expanded(
-                        child: GridView.builder(
-                          itemCount: controller.pokemonList?.length ?? 0,
-                          gridDelegate:
-                              SliverGridDelegateWithMaxCrossAxisExtent(
-                            mainAxisSpacing: 8,
-                            crossAxisSpacing: 8,
-                            maxCrossAxisExtent: 180,
-                          ),
+                        child: StaggeredGridView.extentBuilder(
+                          maxCrossAxisExtent: 180,
+                          mainAxisSpacing: 8,
+                          crossAxisSpacing: 8,
                           itemBuilder: (_, index) {
                             return PokemonTile(
                               backgroundColor: controller.getColorByType(
@@ -117,7 +114,19 @@ class _PokemonListPageState
                               pokemon: controller.pokemonList[index],
                             );
                           },
+                          staggeredTileBuilder: (i) => StaggeredTile.fit(1),
                         ),
+                        // child: GridView.builder(
+                        //   itemCount: controller.pokemonList?.length ?? 0,
+                        //   gridDelegate:
+                        //       SliverGridDelegateWithMaxCrossAxisExtent(
+                        //     mainAxisSpacing: 8,
+                        //     crossAxisSpacing: 8,
+                        //     maxCrossAxisExtent: 180,
+                        //   ),
+                        //   itemBuilder:
+                        //   },
+                        // ),
                       );
                     },
                   ),
