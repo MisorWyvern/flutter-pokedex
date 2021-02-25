@@ -67,6 +67,17 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/pokeball.png
+    - assets/pokeball_gray.png
+    - assets/pokeball10.png
+    - assets/pokeball15.png
+    - assets/pokeball20.png
+    - assets/pokeball30.png
+    - assets/pokeball40.png
+    - assets/pokeball50.png
+    - assets/pokeball10w.png
+    - assets/pokeball15w.png
+    - assets/pokeball20w.png
+    - assets/pokeball30w.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
