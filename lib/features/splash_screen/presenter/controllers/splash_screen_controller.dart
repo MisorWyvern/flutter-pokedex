@@ -6,7 +6,7 @@ class SplashScreenController = _SplashScreenControllerBase
     with _$SplashScreenController;
 
 abstract class _SplashScreenControllerBase with Store {
-  final String route = "/pokelist";
+  final String route = "/dashboard";
   final int navigationDelayInSeconds = 3;
 
   _SplashScreenControllerBase() {
