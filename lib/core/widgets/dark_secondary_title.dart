@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class LightSecondaryTitle extends StatelessWidget {
+class DarkSecondaryTitle extends StatelessWidget {
   final String title;
 
-  const LightSecondaryTitle({Key key, @required this.title})
+  const DarkSecondaryTitle({Key key, @required this.title})
       : assert(title != null),
         super(key: key);
   @override
