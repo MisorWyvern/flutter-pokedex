@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_pokedex/features/dashboard/dashboard_module.dart';
 import 'package:flutter_pokedex/features/splash_screen/presenter/splash_screen_module.dart';
 
 import 'app_widget.dart';
@@ -12,6 +13,7 @@ class AppModule extends MainModule {
   @override
   List<ModularRouter> get routers => [
         ModularRouter("/", module: SplashScreenModule()),
+        ModularRouter("/dashboard", module: DashboardModule()),
         ModularRouter("/pokelist", module: PokemonListModule()),
       ];
 
