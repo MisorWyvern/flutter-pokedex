@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/core/widgets/pokemon_type_chip.dart';
 
 import 'package:flutter_pokedex/features/pokemon_list/infra/dtos/pokemon_dto.dart';
 
@@ -64,24 +65,9 @@ class PokemonTile extends StatelessWidget {
                       itemExtent: 24 + 16.0,
                       itemCount: pokemon.type?.length ?? 0,
                       shrinkWrap: true,
-                      itemBuilder: (_, i) {
-                        return Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Chip(
-                              backgroundColor: backgroundColor.withOpacity(0.6),
-                              label: Text(
-                                pokemon.type[i],
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Theme.of(context)
-                                      .textTheme
-                                      .headline6
-                                      .color,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              )),
-                        );
-                      },
+                      itemBuilder: (_, i) => PokemonTypeChip(
+                          label: pokemon.type[i],
+                          backgroundColor: backgroundColor),
                     ),
                   ],
                 ),
