@@ -6,6 +6,7 @@ class PageHeader extends StatelessWidget {
   final Widget child;
   final String bgImagePath;
   final Color iconColor;
+  final double horizontalPadding;
 
   const PageHeader({
     Key key,
@@ -14,6 +15,7 @@ class PageHeader extends StatelessWidget {
     this.child,
     this.bgImagePath,
     this.iconColor,
+    this.horizontalPadding = 16.0,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,7 @@ class PageHeader extends StatelessWidget {
                 ],
               ),
               body: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 2 * 8.0),
+                padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
                 child: child != null ? child : Container(),
               ),
             ),
