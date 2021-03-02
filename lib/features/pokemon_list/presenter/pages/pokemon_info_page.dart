@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_pokedex/core/widgets/light_secondary_title.dart';
 import 'package:flutter_pokedex/core/widgets/page_header.dart';
-import 'package:flutter_pokedex/core/widgets/pokemon_about.dart';
-import 'package:flutter_pokedex/core/widgets/pokemon_base_stats.dart';
-import 'package:flutter_pokedex/core/widgets/pokemon_type_chip.dart';
+import 'package:flutter_pokedex/core/widgets/pokemon/pokemon_about.dart';
+import 'package:flutter_pokedex/core/widgets/pokemon/pokemon_base_stats.dart';
+import 'package:flutter_pokedex/core/widgets/pokemon/pokemon_type_chip.dart';
 import 'package:flutter_pokedex/features/pokemon_list/presenter/controllers/pokemon_info_controller.dart';
 
 class PokemonInfoPage extends StatefulWidget {

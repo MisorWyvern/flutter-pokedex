@@ -3,7 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_pokedex/core/widgets/dark_small_title.dart';
 import 'package:flutter_pokedex/core/widgets/dark_secondary_title.dart';
 import 'package:flutter_pokedex/core/widgets/page_header.dart';
-import 'package:flutter_pokedex/core/widgets/pokemon_tile.dart';
+import 'package:flutter_pokedex/core/widgets/pokemon/pokemon_tile.dart';
 import 'package:flutter_pokedex/features/pokemon_list/presenter/controllers/pokemon_list_controller.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
