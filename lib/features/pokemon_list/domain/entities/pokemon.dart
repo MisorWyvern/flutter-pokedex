@@ -1,23 +1,25 @@
+import 'package:equatable/equatable.dart';
+
 import 'evolution.dart';
 
-class Pokemon {
-  int id;
-  String num;
-  String name;
-  String img;
-  List<String> type;
-  String height;
-  String weight;
-  String candy;
-  int candyCount;
-  String egg;
-  double spawnChance;
-  double avgSpawns;
-  String spawnTime;
-  List<double> multipliers;
-  List<String> weaknesses;
-  List<Evolution> nextEvolution;
-  List<Evolution> prevEvolution;
+class Pokemon extends Equatable {
+  final int id;
+  final String num;
+  final String name;
+  final String img;
+  final List<String> type;
+  final String height;
+  final String weight;
+  final String candy;
+  final int candyCount;
+  final String egg;
+  final double spawnChance;
+  final double avgSpawns;
+  final String spawnTime;
+  final List<double> multipliers;
+  final List<String> weaknesses;
+  final List<Evolution> nextEvolution;
+  final List<Evolution> prevEvolution;
 
   Pokemon(
       {this.id,
@@ -37,4 +39,28 @@ class Pokemon {
       this.weaknesses,
       this.nextEvolution,
       this.prevEvolution});
+
+  @override
+  List<Object> get props => [
+        id,
+        num,
+        name,
+        img,
+        type,
+        height,
+        weight,
+        candy,
+        candyCount,
+        egg,
+        spawnChance,
+        avgSpawns,
+        spawnTime,
+        multipliers,
+        weaknesses,
+        nextEvolution,
+        prevEvolution
+      ];
+
+  @override
+  bool get stringify => true;
 }
