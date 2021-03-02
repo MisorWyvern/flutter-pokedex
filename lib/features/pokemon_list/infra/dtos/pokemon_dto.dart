@@ -74,11 +74,11 @@ class PokemonDTO extends Equatable {
       'height': height,
       'weight': weight,
       'candy': candy,
-      'candyCount': candyCount,
+      'candy_count': candyCount,
       'egg': egg,
-      'spawnChance': spawnChance,
-      'avgSpawns': avgSpawns,
-      'spawnTime': spawnTime,
+      'spawn_chance': spawnChance,
+      'avg_spawns': avgSpawns,
+      'spawn_time': spawnTime,
       'multipliers': multipliers,
       'weaknesses': weaknesses,
       'nextEvolution': nextEvolution?.map((x) => x?.toMap())?.toList(),
@@ -104,13 +104,13 @@ class PokemonDTO extends Equatable {
     if (map["weaknesses"] != null) {
       weaknesses = List<String>.from(map['weaknesses']);
     }
-    if (map["nextEvolution"] != null) {
+    if (map["next_evolution"] != null) {
       prevEvolution = List<EvolutionDTO>.from(
-          map['nextEvolution']?.map((x) => EvolutionDTO.fromMap(x)));
+          map['next_evolution']?.map((x) => EvolutionDTO.fromMap(x)));
     }
-    if (map["prevEvolution"] != null) {
+    if (map["prev_evolution"] != null) {
       prevEvolution = List<EvolutionDTO>.from(
-          map['prevEvolution']?.map((x) => EvolutionDTO.fromMap(x)));
+          map['prev_evolution']?.map((x) => EvolutionDTO.fromMap(x)));
     }
 
     return PokemonDTO(
@@ -122,11 +122,12 @@ class PokemonDTO extends Equatable {
       height: map['height'] ?? "",
       weight: map['weight'] ?? "",
       candy: map['candy'] ?? "",
-      candyCount: map['candyCount'] ?? 0,
+      candyCount: map['candy_count'] ?? 0,
       egg: map['egg'] ?? "",
-      spawnChance: map['spawnChance'] ?? 0.0,
-      avgSpawns: map['avgSpawns'] ?? 0.0,
-      spawnTime: map['spawnTime'] ?? "",
+      spawnChance:
+          map['spawn_chance'] != null ? map["spawn_chance"] * 1.0 : 0.0,
+      avgSpawns: map['avg_spawns'] != null ? map['avg_spawns'] * 1.0 : 0.0,
+      spawnTime: map['spawn_time'] ?? "",
       multipliers: multipliers,
       weaknesses: weaknesses,
       nextEvolution: nextEvolution,

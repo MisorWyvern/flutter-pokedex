@@ -37,7 +37,9 @@ class _PokemonListPageState
               ),
               FutureBuilder(
                 initialData: [],
-                future: controller.updatePokemonList(),
+                future: controller
+                    .updatePokemonList()
+                    .then((value) => print(value)),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState != ConnectionState.done) {
                     return Expanded(
