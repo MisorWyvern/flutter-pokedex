@@ -6,6 +6,7 @@ import 'package:flutter_pokedex/core/widgets/page_header.dart';
 import 'package:flutter_pokedex/core/widgets/pokemon/pokemon_about.dart';
 import 'package:flutter_pokedex/core/widgets/pokemon/pokemon_base_stats.dart';
 import 'package:flutter_pokedex/core/widgets/pokemon/pokemon_evolution.dart';
+import 'package:flutter_pokedex/core/widgets/pokemon/pokemon_moves.dart';
 import 'package:flutter_pokedex/core/widgets/pokemon/pokemon_type_chip.dart';
 import 'package:flutter_pokedex/features/pokemon_list/presenter/controllers/pokemon_info_controller.dart';
 
@@ -141,7 +142,7 @@ class _PokemonInfoPageState
                                 PokemonAbout(pokemon: pokemon),
                                 PokemonBaseStats(pokemon: pokemon),
                                 PokemonEvolution(pokemon: pokemon),
-                                Container(child: Text("004")),
+                                PokemonMoves(),
                               ]),
                             ),
                           ),
