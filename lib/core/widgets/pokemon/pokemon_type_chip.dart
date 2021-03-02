@@ -18,7 +18,7 @@ class PokemonTypeChip extends StatelessWidget {
           label: Text(
             label,
             style: TextStyle(
-              fontSize: 13,
+              fontSize: 12,
               color: Theme.of(context).textTheme.headline6.color,
               fontWeight: FontWeight.bold,
             ),

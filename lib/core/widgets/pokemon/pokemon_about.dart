@@ -12,90 +12,95 @@ class PokemonAbout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: [
-          Text(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis est turpis, a malesuada ligula ultricies eu. Vivamus at tellus non justo rutrum cursus. Fusce pharetra fermentum condimentum.",
-            textAlign: TextAlign.justify,
-            style: Theme.of(context).textTheme.bodyText1,
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Card(
-            elevation: 5,
-            child: Padding(
-              padding: const EdgeInsets.all(2 * 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: SizedBox(
-                            width: double.maxFinite,
-                            child: Text(
-                              "Height",
-                              style: TextStyle(
-                                  color: Colors.grey[400],
-                                  fontWeight: FontWeight.bold),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text(
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis est turpis, a malesuada ligula ultricies eu. Vivamus at tellus non justo rutrum cursus. Fusce pharetra fermentum condimentum.",
+              textAlign: TextAlign.justify,
+              style: Theme.of(context).textTheme.bodyText1,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Card(
+              elevation: 5,
+              child: Padding(
+                padding: const EdgeInsets.all(2 * 8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: SizedBox(
+                              width: double.maxFinite,
+                              child: Text(
+                                "Height",
+                                style: TextStyle(
+                                    color: Colors.grey[400],
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          width: double.maxFinite,
-                          child: Text(
-                            pokemon.height,
-                            style: Theme.of(context).textTheme.bodyText1,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: SizedBox(
+                          SizedBox(
                             width: double.maxFinite,
                             child: Text(
-                              "Weight",
-                              style: TextStyle(
-                                  color: Colors.grey[400],
-                                  fontWeight: FontWeight.bold),
+                              pokemon.height,
+                              style: Theme.of(context).textTheme.bodyText1,
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          width: double.maxFinite,
-                          child: Text(
-                            pokemon.weight,
-                            style: Theme.of(context).textTheme.bodyText1,
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: SizedBox(
+                              width: double.maxFinite,
+                              child: Text(
+                                "Weight",
+                                style: TextStyle(
+                                    color: Colors.grey[400],
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: double.maxFinite,
+                            child: Text(
+                              pokemon.weight,
+                              style: Theme.of(context).textTheme.bodyText1,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 2 * 8.0),
-            child: DarkSmallTitle(
-              title: "Breeding",
+            SizedBox(
+              height: 16,
             ),
-          ),
-          InfoRow(subtitle: "Candy", text: pokemon.candy),
-          InfoRow(subtitle: "Candy Count", text: "${pokemon.candyCount}"),
-          InfoRow(subtitle: "Egg Hatch Distance", text: pokemon.egg),
-        ],
+            Padding(
+              padding: const EdgeInsets.only(bottom: 2 * 8.0),
+              child: DarkSmallTitle(
+                title: "Breeding",
+              ),
+            ),
+            InfoRow(subtitle: "Candy", text: pokemon.candy),
+            InfoRow(subtitle: "Candy Count", text: "${pokemon.candyCount}"),
+            InfoRow(subtitle: "Egg Hatch Distance", text: pokemon.egg),
+            SizedBox(
+              height: kBottomNavigationBarHeight * 2,
+            )
+          ],
+        ),
       ),
     );
   }

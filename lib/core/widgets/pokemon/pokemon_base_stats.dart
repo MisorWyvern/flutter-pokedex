@@ -54,7 +54,7 @@ class PokemonBaseStats extends StatelessWidget {
           InfoRow(subtitle: "Spawn Time", text: pokemon.spawnTime),
           InfoRow(subtitle: "Multipliers", text: multipliers),
           InfoRow(subtitle: "Weaknesses", text: weaknesses),
-          SizedBox(height: kBottomNavigationBarHeight),
+          SizedBox(height: kBottomNavigationBarHeight * 2),
         ],
       ),
     );
