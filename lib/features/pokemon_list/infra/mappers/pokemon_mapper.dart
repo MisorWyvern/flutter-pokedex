@@ -17,9 +17,9 @@ class PokemonMapper implements Mapper<PokemonDTO, Pokemon> {
     }
 
     List<Evolution> prevEvoList = [];
-    if (dto.nextEvolution != null) {
+    if (dto.prevEvolution != null) {
       prevEvoList =
-          dto.nextEvolution.map((e) => _evoMapper.from(e)).toList().cast();
+          dto.prevEvolution.map((e) => _evoMapper.from(e)).toList().cast();
     }
 
     return Pokemon(
