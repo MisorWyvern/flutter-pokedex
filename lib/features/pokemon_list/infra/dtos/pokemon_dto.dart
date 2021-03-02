@@ -105,7 +105,7 @@ class PokemonDTO extends Equatable {
       weaknesses = List<String>.from(map['weaknesses']);
     }
     if (map["next_evolution"] != null) {
-      prevEvolution = List<EvolutionDTO>.from(
+      nextEvolution = List<EvolutionDTO>.from(
           map['next_evolution']?.map((x) => EvolutionDTO.fromMap(x)));
     }
     if (map["prev_evolution"] != null) {
