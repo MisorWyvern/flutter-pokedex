@@ -1,7 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_pokedex/core/widgets/dark_small_title.dart';
+import 'package:flutter_pokedex/core/widgets/pokemon/evolution_row.dart';
 import 'package:flutter_pokedex/features/pokemon_list/infra/dtos/evolution_dto.dart';
 import 'package:flutter_pokedex/features/pokemon_list/infra/dtos/pokemon_dto.dart';
 
@@ -22,43 +21,41 @@ class PokemonEvolution extends StatelessWidget {
       currentEvolution,
       ...pokemon.nextEvolution,
     ];
-    print("prevEvolution: $evolutionChain");
-    return Column(
-      children: [
-        DarkSmallTitle(title: "Evolution Chain"),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: [
-                Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("assets/pokeball10.png"))),
-                  child: CachedNetworkImage(
-                    imageUrl: "https://www.serebii.net/pokemon/art/" +
-                        pokemon.num +
-                        ".png",
-                    progressIndicatorBuilder: (_, __, downloadProgress) =>
-                        CircularProgressIndicator(
-                      value: downloadProgress.progress,
+
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          DarkSmallTitle(title: "Evolution Chain"),
+          SizedBox(
+            height: 2 * 8.0,
+          ),
+          ListView.builder(
+              shrinkWrap: true,
+              itemCount:
+                  evolutionChain.length != 0 ? evolutionChain.length - 1 : 0,
+              itemBuilder: (_, i) {
+                return Column(
+                  children: [
+                    EvolutionRow(
+                      currentEvo: evolutionChain[i],
+                      nextEvo: evolutionChain[i + 1],
+                      evoLevel: (16 * (i + 1)) + (i * (i + 1)),
                     ),
-                    errorWidget: (_, __, ___) => Icon(Icons.error),
-                  ),
-                )
-              ],
-            ),
-            Column(
-              children: [],
-            ),
-            Column(
-              children: [],
-            ),
-          ],
-        )
-      ],
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: Divider(
+                        thickness: 1,
+                        color: Colors.black12,
+                      ),
+                    ),
+                  ],
+                );
+              }),
+          SizedBox(
+            height: 2 * kBottomNavigationBarHeight,
+          ),
+        ],
+      ),
     );
   }
 }
