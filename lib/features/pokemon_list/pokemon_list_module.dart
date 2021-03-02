@@ -5,7 +5,7 @@ import 'package:flutter_pokedex/features/pokemon_list/domain/usecases/findall_us
 import 'package:flutter_pokedex/features/pokemon_list/domain/usecases/findall_usecase_impl.dart';
 import 'package:flutter_pokedex/features/pokemon_list/external/datasources/dio/pokemon_datasource_impl.dart';
 import 'package:flutter_pokedex/features/pokemon_list/infra/datasources/pokemon_datasource.dart';
-import 'package:flutter_pokedex/features/pokemon_list/infra/mapper/pokemon_mapper.dart';
+import 'package:flutter_pokedex/features/pokemon_list/infra/mappers/pokemon_mapper.dart';
 import 'package:flutter_pokedex/features/pokemon_list/infra/repositories/pokemon_repository_impl.dart';
 import 'package:flutter_pokedex/features/pokemon_list/presenter/controllers/pokemon_info_controller.dart';
 import 'package:flutter_pokedex/features/pokemon_list/presenter/controllers/pokemon_list_controller.dart';

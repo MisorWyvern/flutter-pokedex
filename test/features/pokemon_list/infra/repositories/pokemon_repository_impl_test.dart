@@ -6,7 +6,7 @@ import 'package:flutter_pokedex/features/pokemon_list/infra/datasources/pokemon_
 import 'package:flutter_pokedex/features/pokemon_list/infra/dtos/pokemon_dto.dart';
 import 'package:flutter_pokedex/features/pokemon_list/infra/errors/datasource_exception.dart';
 import 'package:flutter_pokedex/features/pokemon_list/infra/errors/repository_exception.dart';
-import 'package:flutter_pokedex/features/pokemon_list/infra/mapper/pokemon_mapper.dart';
+import 'package:flutter_pokedex/features/pokemon_list/infra/mappers/pokemon_mapper.dart';
 import 'package:flutter_pokedex/features/pokemon_list/infra/repositories/pokemon_repository_impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';

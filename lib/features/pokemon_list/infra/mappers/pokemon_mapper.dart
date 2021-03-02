@@ -3,7 +3,7 @@ import 'package:flutter_pokedex/features/pokemon_list/domain/entities/evolution.
 import 'package:flutter_pokedex/features/pokemon_list/domain/entities/pokemon.dart';
 import 'package:flutter_pokedex/features/pokemon_list/infra/dtos/evolution_dto.dart';
 import 'package:flutter_pokedex/features/pokemon_list/infra/dtos/pokemon_dto.dart';
-import 'package:flutter_pokedex/features/pokemon_list/infra/mapper/evolution_mapper.dart';
+import 'package:flutter_pokedex/features/pokemon_list/infra/mappers/evolution_mapper.dart';
 
 class PokemonMapper implements Mapper<PokemonDTO, Pokemon> {
   final _evoMapper = EvolutionMapper();
