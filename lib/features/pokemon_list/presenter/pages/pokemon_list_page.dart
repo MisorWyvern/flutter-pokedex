@@ -72,7 +72,7 @@ class _PokemonListPageState
                               "Verify your connection and press \"Try again\" button...",
                             ),
                           ),
-                          RaisedButton(
+                          ElevatedButton(
                             onPressed: controller.updatePokemonList,
                             child: Text("Try again"),
                           ),
