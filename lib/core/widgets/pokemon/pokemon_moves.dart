@@ -14,10 +14,14 @@ class PokemonMoves extends StatelessWidget {
                   Icon(
                     Icons.construction,
                     size: 128,
+                    color: Colors.black26,
                   ),
-                  Text(
-                    "Work in Progress...",
-                    style: Theme.of(context).textTheme.headline3,
+                  Opacity(
+                    opacity: 0.26,
+                    child: Text(
+                      "Work in Progress...",
+                      style: Theme.of(context).textTheme.headline5,
+                    ),
                   ),
                 ],
               ),
