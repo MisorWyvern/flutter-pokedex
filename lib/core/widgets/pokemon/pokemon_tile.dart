@@ -48,15 +48,19 @@ class PokemonTile extends StatelessWidget {
                       alignment: Alignment.centerRight,
                       child: Container(
                         width: 96,
-                        child: CachedNetworkImage(
-                          imageUrl: "https://www.serebii.net/pokemon/art/" +
-                              pokemon.num +
-                              ".png",
-                          progressIndicatorBuilder: (_, __, downloadProgress) =>
-                              CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                        child: Hero(
+                          tag: "pokelist: ${pokemon.name}",
+                          child: CachedNetworkImage(
+                            imageUrl: "https://www.serebii.net/pokemon/art/" +
+                                pokemon.num +
+                                ".png",
+                            progressIndicatorBuilder:
+                                (_, __, downloadProgress) =>
+                                    CircularProgressIndicator(
+                              value: downloadProgress.progress,
+                            ),
+                            errorWidget: (_, __, ___) => Icon(Icons.error),
                           ),
-                          errorWidget: (_, __, ___) => Icon(Icons.error),
                         ),
                       ),
                     ),

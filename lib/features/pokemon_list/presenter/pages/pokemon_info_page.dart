@@ -152,16 +152,19 @@ class _PokemonInfoPageState
                   ),
                   Align(
                     alignment: Alignment.center,
-                    child: CachedNetworkImage(
-                      height: 200,
-                      imageUrl: "https://www.serebii.net/pokemon/art/" +
-                          pokemon.num +
-                          ".png",
-                      progressIndicatorBuilder: (_, __, downloadProgress) =>
-                          CircularProgressIndicator(
-                        value: downloadProgress.progress,
+                    child: Hero(
+                      tag: "pokelist: ${pokemon.name}",
+                      child: CachedNetworkImage(
+                        height: 200,
+                        imageUrl: "https://www.serebii.net/pokemon/art/" +
+                            pokemon.num +
+                            ".png",
+                        progressIndicatorBuilder: (_, __, downloadProgress) =>
+                            CircularProgressIndicator(
+                          value: downloadProgress.progress,
+                        ),
+                        errorWidget: (_, __, ___) => Icon(Icons.error),
                       ),
-                      errorWidget: (_, __, ___) => Icon(Icons.error),
                     ),
                   ),
                 ],
