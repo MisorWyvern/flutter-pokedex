@@ -83,7 +83,7 @@ class _PokemonListPageState
 
                   return Expanded(
                     child: StaggeredGridView.extentBuilder(
-                      maxCrossAxisExtent: 180,
+                      maxCrossAxisExtent: 179,
                       mainAxisSpacing: 8,
                       crossAxisSpacing: 8,
                       itemBuilder: (_, index) {

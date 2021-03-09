@@ -29,7 +29,7 @@ class _PokemonInfoPageState
     return PageHeader(
       horizontalPadding: 0,
       color: controller.listController.getColorByType(pokemon.type[0]),
-      bgImagePath: "assets/bgpattern.png",
+      bgImagePath: "assets/bgpatternsm.png",
       iconColor: Theme.of(context).textTheme.headline6.color,
       appBarActions: [
         IconButton(icon: Icon(Icons.favorite_border_outlined), onPressed: () {})
